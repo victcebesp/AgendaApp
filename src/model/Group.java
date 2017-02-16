@@ -10,8 +10,6 @@ public class Group {
 
     List<Contact> listOfContact = new ArrayList<>();
     
-    
-    
     private final String name;
 
     public Group(String name) {
@@ -28,6 +26,12 @@ public class Group {
 
     public void removeContact(Contact contact){
 
+    }
+
+    @Override
+    public boolean equals(Object o){
+        Group group = (Group) o;
+        return this.name.equals(group.getName());
     }
 
 }

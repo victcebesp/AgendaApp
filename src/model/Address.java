@@ -50,4 +50,16 @@ public class Address {
     public int getZIPCode() {
         return ZIPCode;
     }
+
+    @Override
+    public boolean equals(Object o){
+        Address address = (Address)o;
+        return address.street.equals(this.street) &&
+        address.city.equals(this.city) &&
+        address.country.equals(this.country) &&
+        address.number == this.number &&
+        address.floor == this.floor &&
+        address.letter.equals(this.letter) &&
+        address.ZIPCode == ZIPCode;
+    }
 }
