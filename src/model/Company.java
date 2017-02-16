@@ -5,15 +5,23 @@ package model;
  */
 public class Company extends Contact{
 
-    private final String name;
-    private final String description;
+    private String name;
+    private String description;
 
-    public Company(String name, String description) {
-        this.name = name;
-        this.description = description;
+    public Company() {
     }
 
-
+    public Company(String name, int telephone, String email) {
+        this.name = name;
+        super.setEmail(email);
+        super.setTelephone(telephone);
+    }
+    
+    public Company(String name, String description, int telephone, String email, Address address) {
+        this(name, telephone, email);
+        this.description = description;
+        super.setAddress(address);
+    }
 
     public String getDescription() {
         return description;
@@ -23,4 +31,13 @@ public class Company extends Contact{
     String getName() {
         return name;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    
 }
